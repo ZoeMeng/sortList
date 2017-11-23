@@ -1,11 +1,36 @@
 package com.zoe.AlgorithmsDemo;
+
+import java.util.Random;
+
 /*
 Sort a linklist list in O(n log n) time using constant space complexity
 
  */
 public class sortListSolution {
-    public ListNode sortList(ListNode head){
-        if(head == null)
+    public static void main(String[] args){
+        ListNode test = new ListNode(0);
+        ListNode n = test;
+
+        int x;
+        for(int i = 0; i < 9; i++){
+            Random ran = new Random();
+            x = ran.nextInt(100);
+            n.next = new ListNode(x);
+            n = n.next;
+        }
+
+        ListNode h = sortList(test);
+        ListNode i = h;
+        for(; i.next != null; i = i.next){
+            System.out.println(i.val);
+        }
+
+
+
+    }
+
+    public static ListNode sortList(ListNode head){
+        if(head == null || head.next == null)
             return head;
         ListNode mid = getMiddle(head);//get the middle node of the list
 
@@ -17,7 +42,7 @@ public class sortListSolution {
         return mergeTwoLists(sortList(head),sortList(midNext));
     }
 
-    public ListNode getMiddle(ListNode head){
+    public static ListNode getMiddle(ListNode head){
         if(head == null || head.next == null) //空或只有一个
             return head;
         ListNode fast,slow;
