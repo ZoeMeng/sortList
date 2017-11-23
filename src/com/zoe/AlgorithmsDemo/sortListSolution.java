@@ -14,7 +14,7 @@ public class sortListSolution {
         mid.next = null;
 
         //排序，合并
-        return mergeTwoLists(head,midNext);
+        return mergeTwoLists(sortList(head),sortList(midNext));
     }
 
     public ListNode getMiddle(ListNode head){
@@ -61,7 +61,7 @@ public class sortListSolution {
                 return newHead;
             }
             else if(second == null){
-                res.next = second;
+                res.next = first;
                 return newHead;
             }
             else if(first.val < second.val){
