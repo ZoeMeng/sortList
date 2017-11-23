@@ -77,7 +77,7 @@ public class sortListSolution {
             second = l2;
         }else{
             newHead = res = l2;
-            second = l1;
+            first = l1;
         }
 
         while (first != null || second != null){
