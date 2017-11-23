@@ -61,6 +61,10 @@ public class sortListSolution {
                 return newHead;
             }
             else if(second == null){
+                res.next = second;
+                return newHead;
+            }
+            else if(first.val < second.val){
                 res.next = first;
                 first = first.next;
                 res = res.next;
